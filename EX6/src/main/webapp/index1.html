@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Result Processing System</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f7f6; margin: 30px; }
+        .form-container { max-width: 500px; background: white; padding: 25px; border-radius: 8px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); margin: auto; }
+        h2 { text-align: center; color: #333; }
+        label { font-weight: bold; display: block; margin-top: 10px; }
+        input, select { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+        .marks-group { background: #f9f9f9; padding: 10px; margin-top: 15px; border-radius: 4px; border-left: 4px solid #007bff; }
+        button { width: 100%; background-color: #007bff; color: white; border: none; padding: 12px; margin-top: 20px; font-size: 16px; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Examination Entry Form</h2>
+    <form action="ResultServlet" method="POST">
+        
+        <label>Register Number:</label>
+        <input type="text" name="regNo" required>
+
+        <label>Student Name:</label>
+        <input type="text" name="studentName" required>
+
+        <label>Department:</label>
+        <select name="department">
+            <option value="Computer Science">Computer Science</option>
+            <option value="Information Technology">Information Technology</option>
+            <option value="Electronics & Communication">Electronics & Communication</option>
+            <option value="Electrical Engineering">Electrical Engineering</option>
+        </select>
+
+        <div class="marks-group">
+            <h3>Enter Marks (0 - 100)</h3>
+            <!-- Using the same name attribute allows us to use request.getParameterValues() -->
+            <label>Subject 1:</label>
+            <input type="number" name="subjectMarks" min="0" max="100" required>
+            
+            <label>Subject 2:</label>
+            <input type="number" name="subjectMarks" min="0" max="100" required>
+            
+            <label>Subject 3:</label>
+            <input type="number" name="subjectMarks" min="0" max="100" required>
+            
+            <label>Subject 4:</label>
+            <input type="number" name="subjectMarks" min="0" max="100" required>
+            
+            <label>Subject 5:</label>
+            <input type="number" name="subjectMarks" min="0" max="100" required>
+        </div>
+
+        <label>Attendance Percentage (%):</label>
+        <input type="number" name="attendance" min="0" max="100" step="0.1" required>
+
+        <button type="submit">Process Result</button>
+    </form>
+</div>
+
+</body>
+</html>

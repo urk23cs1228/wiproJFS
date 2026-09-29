@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Students</title>
+</head>
+<body>
+
+<h1>All Students</h1>
+
+<table border="1">
+
+    <tr>
+        <th>Register Number</th>
+        <th>Name</th>
+        <th>CGPA</th>
+        <th>Actions</th>
+    </tr>
+
+    <tr th:each="student : ${students}">
+
+        <td th:text="${student.regno}"></td>
+
+        <td th:text="${student.name}"></td>
+
+        <td th:text="${student.cgpa}"></td>
+
+        <td>
+
+            <a th:href="@{/edit/{regno}(regno=${student.regno})}">
+                Edit
+            </a>
+
+            |
+
+            <a th:href="@{/delete/{regno}(regno=${student.regno})}">
+                Delete
+            </a>
+
+        </td>
+
+    </tr>
+
+</table>
+
+<br>
+
+<a href="/">Back to Home</a>
+
+</body>
+</html>

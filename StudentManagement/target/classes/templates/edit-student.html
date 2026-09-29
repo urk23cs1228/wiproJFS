@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Student</title>
+</head>
+<body>
+
+<h1>Update Student</h1>
+
+<form action="/update" method="post">
+
+    <label>Register Number:</label>
+
+    <input type="number"
+           name="regno"
+           th:value="${student.regno}"
+           readonly>
+
+    <br><br>
+
+    <label>Name:</label>
+
+    <input type="text"
+           name="name"
+           th:value="${student.name}"
+           required>
+
+    <br><br>
+
+    <label>CGPA:</label>
+
+    <input type="number"
+           name="cgpa"
+           step="0.01"
+           th:value="${student.cgpa}"
+           required>
+
+    <br><br>
+
+    <button type="submit">Update Student</button>
+
+</form>
+
+<br>
+
+<a href="/students">Back to Students</a>
+
+</body>
+</html>
+
+
+
